@@ -135,8 +135,6 @@ def zero_matrix_v2(matrix):
     matrix[np.ix_(rows)] = 0
     for col in columns:
         matrix[:, col] = 0
-    print(columns)
-    print(rows)
     print(matrix)
     
                 
