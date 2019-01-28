@@ -1,4 +1,4 @@
-""" Classes and methods useds for solutions in Ch. 3 """
+""" Classes and methods used for solutions in Ch. 3 """
 
 from copy import copy
 
