@@ -173,7 +173,3 @@ class AnimalShelter:  # coupled with class MyQueue
             select_animal.availability = False
         return select_animal
 
-
-
-
-
