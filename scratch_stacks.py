@@ -15,7 +15,7 @@ class Stack:
         self.items.append(item)
         self.update_min_push(item)
 
-    def pop_stack(self):
+    def pop(self):
         self.update_min_pop()  # fix so works with SetOfStacks
         return self.items.pop()
 
@@ -81,8 +81,8 @@ class SetOfStacks(Stack):
             self.new_stack()
         self.current_stack.push(item)
 
-    def pop_set(self):
-        self.current_stack.pop_stack()
+    def pop(self):
+        self.current_stack.pop()
         if len(self.current_stack.items) == 0:
             self.stacks.pop()
             self.current_stack = self.stacks[-1]
@@ -90,7 +90,7 @@ class SetOfStacks(Stack):
     def pop_at(self, index):
         try:
             selected_stack = self.stacks[index]
-            selected_stack.pop_stack()
+            selected_stack.pop()
         except IndexError:
             print("Stack does not exist")
 
@@ -111,13 +111,13 @@ class MyQueue():  # coupled with Stack() class
             self.stack_1.push(data)
         else:
             while len(self.stack_1.items) > 0:
-                self.stack_2.push(self.stack_1.pop_stack())
+                self.stack_2.push(self.stack_1.pop())
             self.stack_1.push(data)
             while len(self.stack_2.items) > 0:
-                self.stack_1.push(self.stack_2.pop_stack())
+                self.stack_1.push(self.stack_2.pop())
 
     def pop_from_queue(self):
-        return self.stack_1.pop_stack()
+        return self.stack_1.pop()
 
 
 class Animal:
