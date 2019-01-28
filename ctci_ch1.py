@@ -1,9 +1,6 @@
 import random
-
 import math
-
 import itertools
-
 import numpy as np
 
 # 1.1 - determine if string has all unique characters
@@ -18,8 +15,7 @@ def unique_string(str):
     else:
         print("True")
             
-        
-# 1.2 - Given two strings, check if one is permuation of the other
+# 1.2 - Given two strings, check if one is permutation of the other
 
 def check_permutation(string_1, string_2):
     count = 0
@@ -45,7 +41,7 @@ def URLify(str):
     print(str)
     
     
-# 1.4 - determine if given string is a permuation of a pallindrome
+# 1.4 - determine if given string is a permutation of a pallindrome
 
 def if_pallindrome(str):
     str = str.replace(' ','')
@@ -89,17 +85,17 @@ def one_away(string_1, string_2):
 
 def string_compress(string):
     string = string.replace(' ','')
-    bustdown = list(string)
+    breakdown = list(string)
     letters = []
-    counts = [sum(1 for _ in group) for _, group in itertools.groupby(bustdown)]
-    for i in range(len(bustdown)):
-        if i < len(bustdown) - 1:
-            if bustdown[i + 1] == bustdown[i]:
+    counts = [sum(1 for _ in group) for _, group in itertools.groupby(breakdown)]
+    for i, val in enumerate(breakdown):
+        if i < len(breakdown) - 1:
+            if breakdown[i + 1] == breakdown[i]:
                 pass
             else:
-                letters.append(bustdown[i])
+                letters.append(breakdown[i])
         else:
-            letters.append(bustdown[i])
+            letters.append(breakdown[i])
     insert_count = 1
     for value in counts:
         letters.insert(insert_count, value)
@@ -110,7 +106,7 @@ def string_compress(string):
     
 # 1.7 rotate image defined as NxN matrix (N=4) 90 degrees - do in place if possible
 
-def rotate_img_90(height=1, width=1, turns=0):  # clockwise = turns * -1
+def rotate_img_90(height=4, width=4, turns=1):  # clockwise = turns * -1
     img_matrix = np.arange(height*width).reshape(height, width)
     rotation = np.rot90(img_matrix, turns)
     print(rotation)
@@ -168,3 +164,4 @@ def is_substring(str_1, str_2):
         
 str_1 = "waterbottle"
 str_2 = "terbottlewa"
+
